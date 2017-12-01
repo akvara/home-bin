@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Set colors
+ESC_SEQ="\x1b["
+COL_RESET=$ESC_SEQ"39;49;00m"
+COL_RED=$ESC_SEQ"31;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo usage: $0 number-from number-to [eg: $0 9 7];
+    exit 1;
+fi
+
+sed -i "s|wlan$1|wlan$2|" ~/.conky/TeejeeTech/Network\ Panel

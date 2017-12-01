@@ -1,0 +1,2 @@
+ifconfig | grep wlan
+grep  wlan ~/.conky/TeejeeTech/Network\ Panel
