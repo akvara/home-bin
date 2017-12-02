@@ -1,2 +1,6 @@
+echo real ip:
 ifconfig | grep wlan
-grep  wlan ~/.conky/TeejeeTech/Network\ Panel
+echo Network Panel:
+grep wlan ~/.conky/TeejeeTech/Network\ Panel
+echo seamod:
+grep wlan ~/.conky/Green\ Apple\ Desktop/conky_seamod

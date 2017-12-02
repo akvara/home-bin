@@ -1,0 +1,6 @@
+echo real ip:
+ifconfig | grep eth
+echo Network Panel:
+grep eth ~/.conky/TeejeeTech/Network\ Panel
+echo seamod:
+grep eth ~/.conky/Green\ Apple\ Desktop/conky_seamod

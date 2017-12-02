@@ -11,4 +11,5 @@ if [ -z "$1" ] || [ -z "$2" ]; then
     exit 1;
 fi
 
-sed -i "s|wlan$1|wlan$2|" ~/.conky/TeejeeTech/Network\ Panel
+sed -i -- "s|wlan$1|wlan$2|" ~/.conky/TeejeeTech/Network\ Panel
+sed -i -- "s|wlan$1|wlan$2|" ~/.conky/Green\ Apple\ Desktop/conky_seamod
