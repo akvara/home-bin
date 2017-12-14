@@ -1,1 +1,3 @@
+#!/usr/bin/env bash
+
 cd ~/CCT/inform-debtor/ && ./bin/develop.sh
