@@ -1,2 +1,4 @@
+#!/usr/bin/env bash
+
 sed -i -- "s|eth|wlan|" ~/.conky/Conky\ Seamod/conky_seamod
 sed -i -- "s|ETHERNET|WIFI|" ~/.conky/Conky\ Seamod/conky_seamod
