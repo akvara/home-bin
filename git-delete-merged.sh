@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 git co master
+git pull
 git remote update origin --prune
-git branch --merged master | grep -v '^[ *]*master$' | '^[ *]*staging$' | xargs git branch -d
+git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
