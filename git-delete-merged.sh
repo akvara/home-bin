@@ -3,4 +3,8 @@
 git co master
 git pull
 git remote update origin --prune
-git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+BRANCHES="$(git branch --merged | egrep -v """(^\*|master|dev)""")"
+if [ "$BRANCHES" != "" ]; then
+    git branch -d $BRANCHES
+fi
+# git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
