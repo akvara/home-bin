@@ -5,21 +5,21 @@ source $DIR/colors.sh
 
 TARGET='develop'
 
-echo -en "${COL_GREEN}Checking out to $TARGET ...${COL_RESET}\n"
+echo -en "${COL_BLUE}Checking out to $TARGET ...${COL_RESET}\n"
 git co $TARGET
 check_git_result
 
-echo -en "${COL_GREEN}Pulling $TARGET ...${COL_RESET}\n"
+echo -en "${COL_BLUE}Pulling $TARGET ...${COL_RESET}\n"
 git pull
 check_git_result
 
-echo -en "${COL_GREEN}Pruning ...${COL_RESET}\n"
+echo -en "${COL_BLUE}Pruning ...${COL_RESET}\n"
 git remote update origin --prune
 check_git_result
 git fetch --all --prune
 check_git_result
 
-echo -en "${COL_GREEN}Removing unused branches ...${COL_RESET}\n"
+echo -en "${COL_BLUE}Removing unused branches ...${COL_RESET}\n"
 BRANCHES="$(git branch --merged | egrep -v """(^\*|master|develop)""")"
 if [ "$BRANCHES" != "" ]; then
     git branch -d $BRANCHES
