@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-echo real ip:
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/colors.sh
+
+echo -en "${COL_BLACK}Real IP:${COL_RESET}\n"
 ifconfig | grep wlan
-echo Network Panel:
+
+echo -en "${COL_BLACK}Network Panel:${COL_RESET}\n"
 grep wlan ~/.conky/TeejeeTech/Network\ Panel
-echo seamod:
+
+echo -en "${COL_BLACK}Seamod:${COL_RESET}\n"
 grep wlan ~/.conky/Green\ Apple\ Desktop/conky_seamod

@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-# Set colors
-ESC_SEQ="\x1b["
-COL_RESET=$ESC_SEQ"39;49;00m"
-COL_RED=$ESC_SEQ"31;01m"
-COL_GREEN=$ESC_SEQ"32;01m"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/colors.sh
 
 if [ -z "$1" ] || [ -z "$2" ]; then
-    echo usage: $0 number-from number-to [eg: $0 9 7];
+    echo -en "${COL_RED}usage: ${COL_BLACK}${0##*/} {number-from} {number-to}${COL_RESET}\n"
+    echo -en "${COL_BLACK}e.g: ${COL_BLUE}${0##*/} 9 7${COL_RESET}\n\n"
     exit 1;
 fi
 
