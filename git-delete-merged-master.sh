@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source ~/bin/colors.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/colors.sh
+
 TARGET='master'
 
 echo -en "${COL_GREEN}Checking out to $TARGET ...${COL_RESET}\n"
@@ -13,8 +15,6 @@ check_git_result
 
 echo -en "${COL_GREEN}Pruning ...${COL_RESET}\n"
 git remote update origin --prune
-check_git_result
-git fetch --all --prune
 check_git_result
 
 echo -en "${COL_GREEN}Removing unused branches ...${COL_RESET}\n"

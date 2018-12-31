@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source ~/bin/colors.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/colors.sh
+
 TARGET='develop'
 
 echo -en "${COL_GREEN}Checking out to $TARGET ...${COL_RESET}\n"
