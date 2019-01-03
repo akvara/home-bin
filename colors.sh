@@ -15,6 +15,13 @@ COL_LIGHT=$ESC_SEQ"37;01m"
 check_git_result () {
    if [[ $? -ne 0 ]]; then
       echo -en "${COL_RED}git failed!${COL_RESET}\n"
+      exit 1
+   fi
+}
+
+check_git_result_popd () {
+   if [[ $? -ne 0 ]]; then
+      echo -en "${COL_RED}git failed!${COL_RESET}\n"
       popd
       exit 1
    fi
