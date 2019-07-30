@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-~/Projects/getprices/getquotes $1 $2
+cd ~/Projects/getprices/
+./getquotes $1 $2
