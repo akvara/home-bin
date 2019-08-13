@@ -1,9 +1,6 @@
 #!/bin/sh
 
-rm ~/.WebStorm*/config/eval/WebStorm*evaluation.key
-rm ~/.WebStorm*/config/options/options.xml
-rm -rf ~/.java/.userPrefs/jetbrains/webstorm
-rm -rf ~/Library/Preferences/WebStorm2018.*/eval
-sed -i -- '/evlsprt/d' ~/Library/Preferences/WebStorm2018.3/options/options.xml
-
-open ~/Library/Preferences/com.apple.java.util.prefs.plist
+echo "Resetting Webstorm"
+rm $HOME/Library/Preferences/jetbrains.webstorm.*.plist
+rm $HOME/Library/Preferences/WebStorm2018.*/eval/*.key
+sed -i'' -e '/evlsprt/d' $HOME/Library/Preferences/WebStorm2018.2/options/other.xml
