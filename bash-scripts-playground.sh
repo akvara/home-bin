@@ -8,4 +8,13 @@ echo "# path to me --------------->  ${0}     "
 echo "# parent path -------------->  ${0%/*}  "
 echo "# my name ------------------>  ${0##*/} "
 echo
-exit
+#exit
+
+
+check_git_result () {
+   if [[ $? -ne 0 ]]; then
+      echo -en "${COL_RED}git failed!${COL_RESET}\n"
+      exit 1
+   fi
+}
+
