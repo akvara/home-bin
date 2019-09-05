@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Set colors
+ESC_SEQ="\x1b["
+COL_RESET=$ESC_SEQ"39;49;00m"
+COL_RED=$ESC_SEQ"31;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo usage: $0 letter-from letter-to [eg: $0 b c];
+    exit 1;
+fi
+
+echo -en "Copying ${COL_GREEN}/dev/sd$1${COL_RESET} to ${COL_RED}/dev/sd$2${COL_RESET}\n"
+
+sudo dd if=/dev/sd$1 of=/dev/sd$2
+
+echo -e "${COL_GREEN}Copying finished.${COL_RESET}"
+
+exit 0
