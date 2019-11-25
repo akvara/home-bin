@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ "$1" == "" ]; then
-    echo usage: $1 new-host-name
+    echo usage: $0 new-host-name
     exit 1
 fi
 
