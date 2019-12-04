@@ -22,17 +22,25 @@ fi
 COUNT=1
 MSG="checking out develop"
 message "$MSG"
-git co develop
+git checkout develop
+check_git_result "$MSG"
+
+
+let "COUNT=COUNT+1"
+MSG="pulling develop"
+message "$MSG"
+git pull
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
 MSG="creating new release branch"
 message "$MSG"
-git co -b "release/v$1"
+git checkout -b "release/v$1"
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
 MSG="updating version in package.json"
+message "$MSG"
 sed -i '' "s/\"version\": \"[0-9].[0-9]*.[0-9]*\",/\"version\": \"$1\",/" ./package.json
 
 let "COUNT=COUNT+1"
@@ -44,7 +52,13 @@ check_git_result "$MSG"
 let "COUNT=COUNT+1"
 MSG="checking out master"
 message "$MSG"
-git co master
+git checkout master
+check_git_result "$MSG"
+
+let "COUNT=COUNT+1"
+MSG="pulling master"
+message "$MSG"
+git pull
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
@@ -68,7 +82,7 @@ check_git_result "$MSG"
 let "COUNT=COUNT+1"
 MSG="checking out develop"
 message "$MSG"
-git co develop
+git checkout develop
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"

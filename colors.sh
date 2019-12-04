@@ -26,3 +26,7 @@ check_git_result_popd () {
       exit 1
    fi
 }
+
+message () {
+  echo -en "${COL_BLUE}${COUNT}. $1...${COL_RESET}\n"
+}
