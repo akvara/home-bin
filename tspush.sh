@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/colors.sh
 
 if [ "$1" == "" ]; then
-    echo usage: $0 message
+    echo usage: $0 "message"
     exit 1
 fi
 
@@ -23,7 +23,7 @@ check_git_result "$MSG"
 let "COUNT=COUNT+1"
 MSG="Commiting"
 message "$MSG"
-git ci -m $1
+git ci -m "$*"
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
