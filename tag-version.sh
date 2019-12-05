@@ -3,18 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/colors.sh
 
-check_git_result () {
-   if [[ $? -ne 0 ]]; then
-      echo -en "${COL_RED}git failed ($1)${COL_RESET}\n"
-      exit 1
-   fi
-}
-
-message () {
-  echo -en "${COL_BLUE}${COUNT}. $1...${COL_RESET}\n"
-}
-
-if [ "$1" == "" ]; then
+if [[ "$1" == "" ]]; then
     echo usage: $0 new-version-tag
     exit 1
 fi
@@ -25,12 +14,22 @@ message "$MSG"
 git checkout develop
 check_git_result "$MSG"
 
-
 let "COUNT=COUNT+1"
 MSG="pulling develop"
 message "$MSG"
 git pull
 check_git_result "$MSG"
+
+let "COUNT=COUNT+1"
+MSG="checking tags"
+message "$MSG"
+git fetch --tags
+check_git_result "$MSG"
+
+tagcheck=$(git tag | grep $1)
+if [[ "$tagcheck" == "v$1" ]]; then
+    error "Tag v$1 already exists"
+fi
 
 let "COUNT=COUNT+1"
 MSG="creating new release branch"
@@ -42,6 +41,17 @@ let "COUNT=COUNT+1"
 MSG="updating version in package.json"
 message "$MSG"
 sed -i '' "s/\"version\": \"[0-9].[0-9]*.[0-9]*\",/\"version\": \"$1\",/" ./package.json
+
+dialog "Changed package.json is this:"
+grep '"version":' ./package.json
+
+read -n 1 -sp "Is this correct [y/N]? " answer
+
+if [[ "$answer" == "y" ]]; then
+    dialog "\nProceeding"
+else
+    error "Process cancelled"
+fi
 
 let "COUNT=COUNT+1"
 MSG="committing"

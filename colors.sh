@@ -30,3 +30,12 @@ check_git_result_popd () {
 message () {
   echo -en "${COL_BLUE}${COUNT}. $1...${COL_RESET}\n"
 }
+
+dialog () {
+  echo -en "${COL_BLACK}$1...${COL_RESET}\n"
+}
+
+error () {
+    echo -en "\n${COL_RED}$1.${COL_RESET}\n"
+    exit 1
+}
