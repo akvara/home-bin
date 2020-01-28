@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo pushing with timestamp
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/colors.sh
 
@@ -13,6 +15,8 @@ MSG="Timestamping"
 message "$MSG"
 ./bin/timestamp.sh
 check_git_result "$MSG"
+
+rm *.bak
 
 let "COUNT=COUNT+1"
 MSG="Adding"
