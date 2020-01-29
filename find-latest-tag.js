@@ -23,26 +23,26 @@ function main(stdin_input) {
 
     console.log('All tags:', initial);
 
-    // console.log('-****- tags', tags);
+    let tagBefore;
+    let lastMax;
+    let start = '';
 
-    // console.log('-****- len', tags.length);
-    var first = Math.max.apply(Math, tags.map(tillTheSeparator('.')).map(toNumber));
-    // console.log('-****- first', first);
-    var second =  Math.max.apply(Math, tags.map(stripStart(first + '.')).filter(Boolean).map(tillTheSeparator('.')).map(toNumber));
-    // console.log('-****- second', second);
-    var third =  Math.max.apply(Math, tags.map(stripStart(first + '.' + second + '.')).filter(Boolean).map(tillTheSeparator('.')).map(toNumber));
-    // console.log('-****- third', third);
+    for (let i=0;i<3;i++) {
+        lastMax = Math.max.apply(Math, tags.map(stripStart(start)).filter(Boolean).map(tillTheSeparator('.')).map(toNumber));
+        tagBefore = start;
+        start = start + lastMax + '.';
+    }
 
-    console.log('Suggested new tag: ', first + '.' + second + '.' + (third + 1));
+    console.log('Suggested new tag: ', tagBefore + (lastMax + 1));
 }
 
 function tillTheSeparator (separator) {
     return function (str) {
-        var posOfDot = str.indexOf(separator);
-        if (posOfDot === -1) {
+        var pos = str.indexOf(separator);
+        if (pos === -1) {
             return str;
         }
-    return str.substr(0, posOfDot);
+    return str.substr(0, pos);
 }}
 
 function stripStart (start) {
