@@ -1,6 +1,7 @@
 var process = require('process');
 
 var stdin_input = "";
+var args = process.argv.slice(2);
 
 process.stdin.resume();
 process.stdin.setEncoding("utf-8");
@@ -27,13 +28,18 @@ function main(stdin_input) {
     let lastMax;
     let start = '';
 
-    for (let i=0;i<3;i++) {
+    for (let i = 0; i < 3; i++) {
         lastMax = Math.max.apply(Math, tags.map(stripStart(start)).filter(Boolean).map(tillTheSeparator('.')).map(toNumber));
         tagBefore = start;
         start = start + lastMax + '.';
     }
 
-    console.log('Suggested new tag: ', tagBefore + (lastMax + 1));
+    let suggested =  tagBefore + (lastMax + 1);
+
+    console.log('Suggested new tag:', suggested);
+    console.log('command: \n');
+    console.log(args + '/tag-version.sh ', suggested);
+    console.log('\n');
 }
 
 function tillTheSeparator (separator) {
