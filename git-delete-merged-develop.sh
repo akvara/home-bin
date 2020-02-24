@@ -16,6 +16,7 @@ check_git_result
 echo -en "${COL_BLUE}Pruning ...${COL_RESET}\n"
 git remote update origin --prune
 check_git_result
+
 git fetch --all --prune
 check_git_result
 
