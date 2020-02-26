@@ -1,37 +1,22 @@
 #!/usr/bin/env bash
 
-echo pushing with timestamp
-
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/colors.sh
 
-if [ "$1" == "" ]; then
-    echo usage: $0 "message"
-    exit 1
-fi
-
 COUNT=1
-MSG="Timestamping"
+MSG="checking out develop"
 message "$MSG"
-./bin/timestamp.sh
-check_git_result "$MSG"
-
-rm *.bak
-
-let "COUNT=COUNT+1"
-MSG="Adding"
-message "$MSG"
-git add .
+git checkout develop
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
-MSG="Commiting"
+MSG="fetching tags"
 message "$MSG"
-git ci -m "$*"
+git fetch origin develop --tags
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
-MSG="Pushing"
+MSG="calculating tag"
 message "$MSG"
-git push
+git tag | node $DIR/find-latest-tag.js $DIR
 check_git_result "$MSG"

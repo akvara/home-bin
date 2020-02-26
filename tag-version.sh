@@ -8,6 +8,12 @@ if [[ "$1" == "" ]]; then
     exit 1
 fi
 
+if [[ $1 == v* ]]; then
+    error "version number should not contain 'v'"
+    exit 1
+fi
+
+
 COUNT=1
 MSG="checking out develop"
 message "$MSG"
@@ -56,7 +62,7 @@ fi
 let "COUNT=COUNT+1"
 MSG="committing"
 git add .
-git ci -m "chore(Version): v$1"
+git commit -m "chore(Version): v$1"
 check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
@@ -112,3 +118,5 @@ MSG="pushing develop"
 message "$MSG"
 git push
 check_git_result "$MSG"
+
+echo -en "\n@here tagged new version v$1\n\n"
