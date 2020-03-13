@@ -12,6 +12,9 @@ process.stdin.on("end", function () {
     main(stdin_input);
 });
 
+
+const LEVELS = 3;
+
 function main(stdin_input) {
     var initial = stdin_input
         .split('\n')
@@ -28,7 +31,7 @@ function main(stdin_input) {
     let lastMax;
     let start = '';
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < LEVELS; i++) {
         lastMax = Math.max.apply(Math, tags.map(stripStart(start)).filter(Boolean).map(tillTheSeparator('.')).map(toNumber));
         tagBefore = start;
         start = start + lastMax + '.';
@@ -54,7 +57,7 @@ function tillTheSeparator (separator) {
 function stripStart (start) {
     return function (str) {
         var pos = str.indexOf(start);
-        if (pos === -1) {
+        if (pos === -1 || !str.startsWith(start)) {
             return null;
         }
         return str.substr(start.length);
