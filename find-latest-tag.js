@@ -56,11 +56,7 @@ function tillTheSeparator (separator) {
 
 function stripStart (start) {
     return function (str) {
-        var pos = str.indexOf(start);
-        if (pos === -1 || !str.startsWith(start)) {
-            return null;
-        }
-        return str.substr(start.length);
+        return str.startsWith(start) ? str.substr(start.length) : null;
     }
 }
 
