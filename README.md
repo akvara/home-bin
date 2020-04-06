@@ -15,3 +15,7 @@ Usage
 ## To tag new version, run
 
 ~/bin/tag-version.sh [version-without-v]
+
+*Hint*: the script also prints notification to be posted to Slack
+
+

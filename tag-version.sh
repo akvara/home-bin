@@ -119,4 +119,24 @@ message "$MSG"
 git push
 check_git_result "$MSG"
 
-echo -en "\n@here tagged new version v$1\n\n"
+short=${PWD##*/}
+case $short in
+
+  ta-fleet-fe)
+    project="Fleet"
+    ;;
+
+  ta-backoffice-fe)
+    project="BackOffice"
+    ;;
+
+  tmr-tracker-fe)
+    project="TMR-fe"
+    ;;
+
+  *)
+    project=""
+    ;;
+esac
+
+echo -en "\n@here tagged new $project version v$1\n\n"
