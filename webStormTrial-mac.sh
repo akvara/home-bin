@@ -1,6 +1,9 @@
 #!/bin/sh
 
-echo "Resetting Webstorm"
-rm $HOME/Library/Preferences/jetbrains.webstorm.*.plist
-rm $HOME/Library/Preferences/WebStorm2019.*/eval/*.key
-sed -i'' -e '/evlsprt/d' $HOME/Library/Preferences/WebStorm2019.1/options/other.xml
+echo "Resetting Webstorm on Mac..."
+rm -rf ~/Library/Preferences/WebStorm*/eval
+sed -i  '' '/evlsprt/d' ~/Library/Preferences/WebStorm*/options/other.xml
+rm -f ~/Library/Preferences/com.apple.java.util.prefs.plist
+rm -f ~/Library/Preferences/com.jetbrains.*.plist
+rm -f ~/Library/Preferences/jetbrains.*.*.plist
+echo "Done."

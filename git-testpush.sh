@@ -24,7 +24,7 @@ echo -en "${COL_BLUE}Adding files...${COL_RESET}\n"
 git add .
 check_git_result
 
-echo -en "${COL_BLUE}Committing with message: $1{COL_RESET}\n"
+echo -en "${COL_BLUE}Committing with message: '$1'${COL_RESET}\n"
 git commit -m "$1"
 check_git_result
 
