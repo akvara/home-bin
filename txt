@@ -1,1 +1,73 @@
-@graphql-codegen/add @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations
+== Grandinė ==
+[[Vaizdas:Struve Geodetic Arc-zoom-lt.svg|miniatiūra|280px]]
+{{multiple image
+| align = right
+| direction = vertical
+| footer = Struvės lankas pašto ženkluose
+| width = 140
+| image1 = Stamps of Lithuania, 2009-32.jpg
+| image2 = Stamps of Lithuania, 2009-33.jpg
+}}
+{{multiple image
+| align = right
+| direction = horizontal
+| footer = Struvės lankas [[Lietuvos bankas|Lietuvos banko]] monetoje
+| width = 120
+| image1 = LT-2015-20euro-Struve-b.png
+| image2 = LT-2015-20euro-Struve-a.png
+}}
+Išlikę Struvės lanko punktai su tiksliomis koordinatėmis, įtraukti į UNESCO paveldo sąrašą:
+
+
+'''Norvegija'''
+* Fuglenes 70°40′12″N 23°39′48″E
+* Raipas 70°40′12″N 23°39′48″E
+* Luvdiidcohkka 69°39′52″N 23°36′08″E
+* Baelljasvarri 69°01′43″N 23°18′19″E
+
+'''Švedija'''
+* Tynnyrilaki 68°15′18″N 22°58′59″E
+* Jupukka 67°16′36″N 23°14′35″E
+* Pullinki 66°38′47″N 23°46′55″E
+* Perävaara 66°01′05″N 23°55′21″E
+
+'''Suomija'''
+* Stuorrahanoaivi 68°40′57″N 22°44′45″E
+* Aavasaksa 66°23′52″N 23°43′31″E
+* Alatornion kirkko 65°49′48″N 24°09′26″E
+* Oravivuori 61°55′36″N 25°32′01″E
+* Tornikallio 60°42′17″N 26°00′12″E
+* Mustaviiri 60°16′35″N 26°36′12″E
+
+'''Rusija'''
+* [[Hoglandas]] 60°05′10″N 26°57′38″E
+
+'''Estija'''
+* [[Veiverė]] 59°03′28″N 26°20′16″E
+* [[Simuna]] 59°02′54″N 26°24′51″E
+* [[Tartu observatorija]] 58°22′44″N 26°43′12″E
+
+'''Latvija'''
+* Ziestai 56°50′24″N 25°38′12″E
+* [[Jekabpilis]] 56°30′05″N 25°51′24″E
+
+'''Lietuva'''
+* [[Gireišiai (Rokiškis)|Gireišiai]] 55°54′09″N 25°26′12″E
+* [[Meškonys]] 54°55′51″N 25°19′00″E
+* [[Paliepiukai]] 54°38′04″N 25°25′45″E
+
+'''Baltarusija'''
+* Tupiškiai 54°17′30″N 26°02′43″E
+* Lopaty 53°33′38″N 24°52′11″E
+* Osovnica 52°17′22″N 25°38′58″E
+* Čekutsk 52°12′28″N 25°33′23″E
+* Leskoviči 52°09′39″N 25°34′17″E
+
+'''Moldova'''
+* Rudi 48°19′08″N 27°52′36″E
+
+'''Ukraina'''
+* Katerinovka 49°33′57″N 26°45′22″E
+* Felštin 49°19′48″N 26°40′55″E
+* Baranovka 49°08′55″N 26°59′30″E
+* Stara Nekrasivka 45°19′54″N 28°55′41″E
