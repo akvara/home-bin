@@ -37,7 +37,7 @@ echo $project
 
 check_git_result () {
    if [[ $? -ne 0 ]]; then
-      echo -en "${COL_RED}git failed!${COL_RESET}\n"
+      echo -en "${COL_RED}git failed!${COL_RESET}\n\n"
       exit 1
    fi
 }

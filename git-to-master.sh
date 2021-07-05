@@ -6,6 +6,14 @@ source ${DIR}/colors.sh
 SOURCE='dev'
 TARGET='master'
 
+read -n 1 -sp "Are you sure you want to deploy [y/N]? " answer
+
+if [[ "$answer" == "y" ]]; then
+    dialog "\nProceeding"
+else
+    error "Cancelled."
+fi
+
 echo -en "${COL_BLUE}Checking out to $SOURCE ...${COL_RESET}\n"
 git checkout ${SOURCE}
 check_git_result

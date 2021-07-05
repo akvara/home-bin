@@ -8,7 +8,7 @@ git add .
 check_git_result
 
 echo -en "${COL_BLUE}Committing with no message...${COL_RESET}\n"
-git commit -m "fix(Merge): Merge conflicts fixed
+git commit -m "fix(Merge): Merge conflicts fixed"
 check_git_result
 
 echo -en "${COL_BLUE}Pushing...${COL_RESET}\n"
