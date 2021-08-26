@@ -19,8 +19,8 @@ fi
 committext=${1}
 
 echo -en "${COL_BLUE}Running tests${COL_RESET}\n"
-npm test
-check_git_result
+#npm test
+#check_git_result
 
 echo -en "${COL_BLUE}Running linter...${COL_RESET}\n"
 #npm run lint

@@ -31,7 +31,7 @@ git pull
 check_git_result
 
 echo -en "${COL_BLUE}Merging $SOURCE to $TARGET...${COL_RESET}\n"
-git merge ${SOURCE}
+git rebase ${SOURCE}
 check_git_result
 
 echo -en "${COL_BLUE}Pushing $TARGET ...${COL_RESET}\n"

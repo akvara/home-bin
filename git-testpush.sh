@@ -26,8 +26,8 @@ echo -en "${COL_BLUE}Running linter...${COL_RESET}\n"
 npm run lint:fix
 check_git_result
 
-echo -en "${COL_BLUE}Running type-check...${COL_RESET}\n"
-npm run type-check
+echo -en "${COL_BLUE}Running typelint...${COL_RESET}\n"
+npm run typelint
 check_git_result
 
 echo -en "${COL_BLUE}Adding files...${COL_RESET}\n"
