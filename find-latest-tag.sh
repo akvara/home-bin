@@ -3,17 +3,19 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/colors.sh
 
+TARGET='master'
+
 COUNT=1
-MSG="checking out develop"
+MSG="checking out $TARGET"
 message "$MSG"
-git checkout develop
+git checkout ${TARGET}
 check_git_result "$MSG"
 
-let "COUNT=COUNT+1"
-MSG="fetching tags"
-message "$MSG"
-git fetch origin develop --tags
-check_git_result "$MSG"
+#let "COUNT=COUNT+1"
+#MSG="fetching tags"
+#message "$MSG"
+#git fetch origin ${TARGET} --tags
+#check_git_result "$MSG"
 
 let "COUNT=COUNT+1"
 MSG="calculating tag"

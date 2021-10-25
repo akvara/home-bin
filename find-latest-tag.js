@@ -21,8 +21,8 @@ function main(stdin_input) {
         .filter(function (t) { return t.length>0});
 
     var tags = initial
-        .filter(function (t) { return t[0]==='v'})
-        .map(function (t) { return t.substr(1)})
+        // .filter(function (t) { return t[0]==='v'})
+        .map(function (t) { return t.substr(0)})
         .map(tillTheSeparator('-'));
 
     console.log('All tags:', initial);
@@ -41,7 +41,7 @@ function main(stdin_input) {
 
     console.log('Suggested new tag:', suggested);
     console.log('command: \n');
-    console.log(args + '/tag-version.sh ', suggested);
+    console.log(args + '/git-tag-master.sh ', suggested);
     console.log('\n');
 }
 
