@@ -13,7 +13,6 @@ if [[ $1 == v* ]]; then
     exit 1
 fi
 
-
 COUNT=1
 MSG="checking out develop"
 message "$MSG"

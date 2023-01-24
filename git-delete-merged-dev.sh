@@ -21,7 +21,7 @@ git fetch --all --prune
 check_git_result
 
 echo -en "${COL_BLUE}Removing unused branches ...${COL_RESET}\n"
-BRANCHES="$(git branch --merged | egrep -v """(^\*|master|develop)""")"
+BRANCHES="$(git branch --merged | egrep -v """(^\*|master|develop|dev)""")"
 if [ "$BRANCHES" != "" ]; then
     git branch -d $BRANCHES
     check_git_result
