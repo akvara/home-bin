@@ -26,7 +26,7 @@ SEARCH_STRING="/browse/"
 REST=${BRANCH_NAME#*$SEARCH_STRING}
 STARTS_AT=$(( ${#BRANCH_NAME} - ${#REST} - ${#SEARCH_STRING} + 8 ))
 
-NAME="ft/${1:${STARTS_AT}:10}${COMMENT}"
+NAME="ft/${1:${STARTS_AT}}${COMMENT}"
 
 #echo "${NAME}"
 
