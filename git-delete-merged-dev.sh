@@ -27,6 +27,10 @@ if [ "$BRANCHES" != "" ]; then
     check_git_result
 fi
 
+echo -en "${COL_BLUE}Removing gone branches ...${COL_RESET}\n"
+git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D;
+check_git_result
+
 echo -e "${COL_GREEN}Finished.${COL_RESET}"
 
 exit 0
